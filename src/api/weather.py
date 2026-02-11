@@ -7,7 +7,7 @@ from loguru import logger
 
 
 class WeatherAPIClient:
-    """Client to fetch daily weather metrics from Open-Meteo (Free)."""
+    """Client to fetch daily weather metrics from Open-Meteo (Free)"""
 
     def __init__(self) -> None:
         self.logger = logger

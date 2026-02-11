@@ -11,7 +11,7 @@ def client() -> WeatherAPIClient:
 
 
 def test_fetch_weather_success(client: WeatherAPIClient, mocker: MockerFixture) -> None:
-    # Mock the Open-Meteo JSON response structure
+    # Mock the Open-Meteo JSON response structure.
     mock_response = {
         "daily": {
             "time": ["2026-02-11"],
