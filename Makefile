@@ -23,7 +23,7 @@ format: ## Auto-format code with Ruff
 	ruff format .
 
 test: ## Run unit and integration tests
-	pytest
+	pytest tests/
 
 test-cov: ## Run tests with coverage enforcement
 	pytest --cov=src --cov-report=term-missing --cov-fail-under=0
