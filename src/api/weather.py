@@ -7,7 +7,7 @@ from loguru import logger
 
 
 class WeatherAPIClient:
-    """Client to fetch daily weather metrics from Open-Meteo (Free)"""
+    """Client to fetch daily weather metrics from Open-Meteo (Free)."""
 
     def __init__(self) -> None:
         self.logger = logger
@@ -61,6 +61,9 @@ class WeatherAPIClient:
 
         except requests.RequestException as e:
             self.logger.error(f"Open-Meteo request failed: {str(e)}")
+            raise
+        except (ValueError, KeyError) as e:
+            self.logger.error(f"Open-Meteo response parsing failed for {location_name}: {e}")
             raise
 
 
