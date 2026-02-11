@@ -1,1 +1,7 @@
 repomix-output.md
+.env
+.coverage
+*__pycache__
+*mypy_cache*
+*pytest_cache*
+*ruff_cache*
