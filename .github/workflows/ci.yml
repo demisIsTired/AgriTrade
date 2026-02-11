@@ -24,10 +24,10 @@ jobs:
           pip install ruff mypy pytest pytest-cov pandera pandas-stubs
 
       - name: Lint with Ruff
-        [cite_start]run: ruff check . [cite: 75]
+        run: ruff check .
 
       - name: Type check with Mypy
         run: mypy src
 
       - name: Run Tests with Coverage
-        [cite_start]run: pytest --cov=src --cov-fail-under=90 [cite: 76]
+        run: pytest --cov=src --cov-fail-under=90
