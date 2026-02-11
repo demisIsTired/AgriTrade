@@ -4,6 +4,7 @@ yfinance==0.2.36        # Commodity price extraction
 requests>=2.32.4        # Weather API interaction
 sqlalchemy==2.0.27       # Database ORM for PostgreSQL
 psycopg2-binary==2.9.9  # PostgreSQL adapter
+alembic>=1.13.1         # Database migration management
 
 # --- Data Validation & Observability ---
 pandera>=0.18.0        # Schema enforcement and data QA

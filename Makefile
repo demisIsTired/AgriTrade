@@ -17,7 +17,7 @@ setup: ## Install dependencies and setup pre-commit hooks
 
 lint: ## Run Ruff linting and Mypy type checking
 	ruff check . --fix
-	mypy src
+	mypy .
 
 format: ## Auto-format code with Ruff
 	ruff format .
