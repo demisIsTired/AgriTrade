@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, timedelta
 
 import pandas as pd
 import yfinance as yf
@@ -70,3 +70,36 @@ class CommodityAPIClient:
         except Exception as e:
             self.logger.error(f"Failed to fetch data for {symbol}: {str(e)}")
             raise
+
+
+if __name__ == "__main__":
+    # Initialize the client
+    client = CommodityAPIClient()
+
+    # Set up a test date range (e.g., the last 30 days)
+    test_end_date = date.today()
+    test_start_date = test_end_date - timedelta(days=30)
+
+    # Test with Soybeans futures (ZS=F) as specified in your SRS
+    test_symbol = "ZS=F"
+
+    logger.info(f"--- Starting manual test for {test_symbol} ---")
+
+    try:
+        # Fetch the data
+        df_result = client.fetch_daily_prices(
+            symbol=test_symbol, start_date=test_start_date, end_date=test_end_date
+        )
+
+        # Display the results
+        if not df_result.empty:
+            print("\nData Preview:")
+            print(df_result.head())
+            print("\nSchema info:")
+            print(df_result.dtypes)
+            print(f"\nTotal rows fetched: {len(df_result)}")
+        else:
+            logger.warning("Test completed, but DataFrame was empty.")
+
+    except Exception as err:
+        logger.error(f"Manual test failed: {err}")

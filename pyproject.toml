@@ -25,3 +25,15 @@ module = [
     "pandas.*"  # Adding pandas here too just to be safe
 ]
 ignore_missing_imports = true
+
+
+[tool.coverage.report]
+exclude_lines = [
+    # Have to re-enable the standard pragma
+    "pragma: no cover",
+    # Don't complain if non-runnable code isn't run:
+    "if 0:",
+    "if __name__ == .__main__.:",
+    "pass",
+    "raise ImportError"
+]
