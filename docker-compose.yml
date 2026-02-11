@@ -5,7 +5,7 @@ services:
     environment:
       POSTGRES_DB: agritrade
       POSTGRES_USER: dev_user
-      POSTGRES_PASSWORD: dev_password
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
       - "5432:5432"
     volumes:
