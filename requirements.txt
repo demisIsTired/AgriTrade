@@ -1,8 +1,9 @@
 # --- Core ETL & Data Processing ---
 pandas==2.2.0           # Data manipulation and merging
-yfinance==0.2.36        # Commodity price extraction
+pyarrow>=14.0.0         # Pandas backend engine (Removes deprecation warning)
+yfinance>=0.2.65        # Updated to latest to fix Yahoo API connection errors
 requests>=2.32.4        # Weather API interaction
-sqlalchemy==2.0.27       # Database ORM for PostgreSQL
+sqlalchemy==2.0.27      # Database ORM for PostgreSQL
 psycopg2-binary==2.9.9  # PostgreSQL adapter
 alembic>=1.13.1         # Database migration management
 
