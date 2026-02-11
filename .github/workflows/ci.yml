@@ -1,0 +1,33 @@
+# .github/workflows/ci.yml
+name: AgriTrade CI
+
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install ruff mypy pytest pytest-cov pandera pandas-stubs
+
+      - name: Lint with Ruff
+        [cite_start]run: ruff check . [cite: 75]
+
+      - name: Type check with Mypy
+        run: mypy src
+
+      - name: Run Tests with Coverage
+        [cite_start]run: pytest --cov=src --cov-fail-under=90 [cite: 76]

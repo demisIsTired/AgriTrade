@@ -1,0 +1,27 @@
+# --- Core ETL & Data Processing ---
+pandas==2.2.0           # Data manipulation and merging [cite: 57]
+yfinance==0.2.36        # Commodity price extraction
+requests==2.31.0        # Weather API interaction
+sqlalchemy==2.0.27       # Database ORM for PostgreSQL [cite: 63, 64]
+psycopg2-binary==2.9.9  # PostgreSQL adapter [cite: 62]
+
+# --- Data Validation & Observability ---
+pandera==0.18.0         # Schema enforcement and data QA [cite: 60, 68]
+pydantic==2.6.1         # Data models and settings management [cite: 53]
+loguru==0.7.2           # Enhanced logging for pipeline observability
+
+# --- Machine Learning & Analytics ---
+xgboost==2.0.3          # Price forecasting model [cite: 97]
+prophet==1.1.5          # Time-series forecasting [cite: 97]
+scikit-learn==1.4.1     # Feature scaling and metrics
+
+# --- Quality Assurance & Testing ---
+pytest==8.0.0           # Unit and integration testing [cite: 70, 71]
+pytest-cov==4.1.0       # Coverage reporting (Target >90%) [cite: 76]
+pytest-mock==3.12.0     # API mocking for resilient tests
+ruff==0.2.1             # Fast linting and formatting [cite: 75]
+mypy==1.8.0             # Static type checking 
+
+# --- DevOps & Environment ---
+python-dotenv==1.0.1    # Environment variable management [cite: 87]
+pre-commit==3.6.1       # Local git hooks for QA enforcement [cite: 75]
