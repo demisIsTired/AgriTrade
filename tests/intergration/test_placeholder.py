@@ -1,4 +1,4 @@
-from pipelines.engine import get_status
+from src.pipelines.engine import get_status
 
 
 def test_pipeline_status() -> None:

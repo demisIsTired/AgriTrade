@@ -5,11 +5,16 @@ target-version = "py312"
 [tool.ruff.lint]
 select = ["E", "F", "I", "N", "UP", "PL"] # Linting rules 
 
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["PLR2004"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-pythonpath = ["src"]
+pythonpath = ["."]
 addopts = "--cov=src --cov-report=term-missing --cov-fail-under=0" # Temporary: allow 0% coverage until tests exist
 
 [tool.mypy]
 python_version = "3.12"
 strict = true # Enforce strict type hints
+exclude = ["^alembic/"]
+explicit_package_bases = true
