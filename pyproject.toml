@@ -1,5 +1,5 @@
 [tool.ruff]
-line-length = 88
+line-length = 100
 target-version = "py312"
 
 [tool.ruff.lint]
@@ -18,3 +18,10 @@ python_version = "3.12"
 strict = true # Enforce strict type hints
 exclude = ["^alembic/"]
 explicit_package_bases = true
+
+[[tool.mypy.overrides]]
+module = [
+    "yfinance.*",
+    "pandas.*"  # Adding pandas here too just to be safe
+]
+ignore_missing_imports = true

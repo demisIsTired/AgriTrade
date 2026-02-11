@@ -30,12 +30,8 @@ def upgrade() -> None:
         sa.Column("volume", sa.Integer(), nullable=True),
         sa.PrimaryKeyConstraint("id", name=op.f("pk_commodity_prices")),
     )
-    op.create_index(
-        op.f("ix_commodity_prices_date"), "commodity_prices", ["date"], unique=False
-    )
-    op.create_index(
-        op.f("ix_commodity_prices_id"), "commodity_prices", ["id"], unique=False
-    )
+    op.create_index(op.f("ix_commodity_prices_date"), "commodity_prices", ["date"], unique=False)
+    op.create_index(op.f("ix_commodity_prices_id"), "commodity_prices", ["id"], unique=False)
     op.create_table(
         "weather_metrics",
         sa.Column("id", sa.Integer(), nullable=False),
@@ -45,12 +41,8 @@ def upgrade() -> None:
         sa.Column("precip_mm", sa.Float(), nullable=False),
         sa.PrimaryKeyConstraint("id", name=op.f("pk_weather_metrics")),
     )
-    op.create_index(
-        op.f("ix_weather_metrics_date"), "weather_metrics", ["date"], unique=False
-    )
-    op.create_index(
-        op.f("ix_weather_metrics_id"), "weather_metrics", ["id"], unique=False
-    )
+    op.create_index(op.f("ix_weather_metrics_date"), "weather_metrics", ["date"], unique=False)
+    op.create_index(op.f("ix_weather_metrics_id"), "weather_metrics", ["id"], unique=False)
     # ### end Alembic commands ###
 
 
