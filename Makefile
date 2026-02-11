@@ -16,14 +16,14 @@ setup: ## Install dependencies and setup pre-commit hooks
 ## --- QA & LINTING ---
 
 lint: ## Run Ruff linting and Mypy type checking
-	ruff check .
+	ruff check . --fix
 	mypy src
 
 format: ## Auto-format code with Ruff
 	ruff format .
 
 test: ## Run unit and integration tests
-	pytest tests/
+	pytest
 
 test-cov: ## Run tests with coverage enforcement
 	pytest --cov=src --cov-report=term-missing --cov-fail-under=0

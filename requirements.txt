@@ -1,13 +1,13 @@
 # --- Core ETL & Data Processing ---
 pandas==2.2.0           # Data manipulation and merging
 yfinance==0.2.36        # Commodity price extraction
-requests==2.31.0        # Weather API interaction
+requests>=2.32.4        # Weather API interaction
 sqlalchemy==2.0.27       # Database ORM for PostgreSQL
 psycopg2-binary==2.9.9  # PostgreSQL adapter
 
 # --- Data Validation & Observability ---
-pandera==0.18.0         # Schema enforcement and data QA
-pydantic==2.6.1         # Data models and settings management
+pandera>=0.18.0        # Schema enforcement and data QA
+pydantic>=2.12.5         # Data models and settings management
 loguru==0.7.2           # Enhanced logging for pipeline observability
 
 # --- Machine Learning & Analytics ---
@@ -16,7 +16,7 @@ prophet==1.1.5          # Time-series forecasting
 scikit-learn>=1.4.1     # Feature scaling and metrics
 
 # --- Quality Assurance & Testing ---
-pytest==8.0.0           # Unit and integration testing
+pytest>=8.2.0           # Unit and integration testing
 pytest-cov==4.1.0       # Coverage reporting (Target >90%)
 pytest-mock==3.12.0     # API mocking for resilient tests
 ruff==0.2.1             # Fast linting and formatting
